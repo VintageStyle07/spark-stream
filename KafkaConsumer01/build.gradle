@@ -1,0 +1,42 @@
+plugins {
+    id("java")
+}
+
+group = "org.Kafkastream"
+version = "1.0-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spark dependencies
+    implementation("org.apache.spark:spark-core_2.12:3.2.0")
+    implementation("org.apache.spark:spark-sql_2.12:3.2.0")
+    implementation("org.apache.spark:spark-streaming_2.12:3.2.0") // If you're using Spark Streaming
+    implementation("org.apache.spark:spark-sql-kafka-0-10_2.12:3.2.0") // Kafka integration
+
+    // Jackson dependencies for processing JSON data
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.13.0")
+    implementation("com.fasterxml.jackson.module:jackson-module-scala_2.12:2.13.0")
+    // Apache Spark dependencies
+    implementation ("org.apache.spark:spark-core_2.12:3.1.2")
+    implementation ("org.apache.spark:spark-sql_2.12:3.1.2")
+    implementation ("org.apache.spark:spark-streaming_2.12:3.1.2")
+    implementation ("org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2")
+
+    // Add any other dependencies used in your code here
+
+
+
+    // Slf4j dependency for logging
+    // implementation("org.slf4j:slf4j-simple:1.7.32")
+
+    // Add any other dependencies as needed
+}
+
+
+tasks.test {
+    useJUnitPlatform()
+}
+
