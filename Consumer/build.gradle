@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.apache.spark:spark-core_2.12:3.2.0'
+    implementation 'org.apache.spark:spark-sql_2.12:3.2.0'
+    implementation 'org.apache.spark:spark-streaming_2.12:3.2.0' // Only needed for older versions of Spark
+    implementation 'org.apache.spark:spark-sql-kafka-0-10_2.12:3.2.0' // Kafka integration for Spark
+    implementation 'org.apache.kafka:kafka-clients:3.0.0' // Kafka client library
+    implementation 'org.apache.kafka:kafka_2.12:3.0.0' // Kafka core library
+    implementation 'com.launchdarkly:eventsource-java:1.0.4' // EventSource client library
+}
+
+// Optional configurations
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
